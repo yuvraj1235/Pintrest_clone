@@ -11,7 +11,7 @@ const ApiProvider = ({ children }) => {
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
-        const client = createClient("api_key");  // Use the API key correctly
+        const client = createClient(api_key);  // Use the API key correctly
         const response = await client.photos.curated({ per_page: 80 });
         setPhotos(response.photos);  // Update state with fetched photos
       } catch (err) {

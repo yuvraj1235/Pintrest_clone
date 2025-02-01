@@ -7,7 +7,6 @@ const ProtectecRouted = () => {
     if (isLoading) {
         return <div>Loading...</div>;  
     }
-
     return isAuthenticated ? <Outlet /> : <Navigate to="/" />;  
 };
 

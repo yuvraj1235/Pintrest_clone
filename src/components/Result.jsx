@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useLocation } from "react-router-dom";
-import Header from "./header";
 import { UserContext } from "./components/Api";  // Assuming UserContext is correct
 import { createClient } from "pexels";  // Assuming pexels client is available
 

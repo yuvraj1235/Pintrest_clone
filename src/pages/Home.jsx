@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import PinCard from "../components/pincard";
-import Header from "../components/header";
 import { UserContext } from "../components/Api"; 
+import Header from "../components/Header";
 
 const Home = () => {
   const { photos, error } = useContext(UserContext);
@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <div>
-      <Header />
+      <Header/>
       <PinCard Pins={photos} /> 
     </div>
   );

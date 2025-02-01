@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../components/Api";
-import Header from "../components/header";
 import PinCard from "../components/pincard";
 import axios from "axios";
+import Header from "../components/Header";
 
 const PinterestCard = () => {
   const { photos, error } = useContext(UserContext); 
@@ -16,7 +16,7 @@ const PinterestCard = () => {
   if (!photo) {
     return (
       <div className="w-full h-full">
-        <Header />
+        <Header/>
         <div className="m-10">
           <h2 className="text-xl text-center">Photo not found</h2>
         </div>
