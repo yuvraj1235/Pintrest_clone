@@ -1,7 +1,6 @@
 import React from "react";
 import {useNavigate} from "react-router-dom";
 import { FaPinterest } from "react-icons/fa";
-
 import { IoIosLogOut } from "react-icons/io";
 import { useAuth0 } from "@auth0/auth0-react";
 const Header = () => {
