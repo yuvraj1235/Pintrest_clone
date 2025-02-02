@@ -6,8 +6,8 @@ export const UserContext = createContext();
 const ApiProvider = ({ children }) => {
   const [photos, setPhotos] = useState([]); 
   const [error, setError] = useState(null); 
-  const api_key = import.meta.env.VITE_PEXELS_API;  // Get API key from environment variables
-
+  const api_key = "naya api key";  // Get API key from environment variables
+  console.log(api_key);
   useEffect(() => {
     const fetchPhotos = async () => {
       try {

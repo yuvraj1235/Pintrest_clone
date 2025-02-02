@@ -3,9 +3,9 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import PinterestCard from "./pages/Pintrestcard";
 import { UserContext } from "./components/Api";
-import PinterestLogin from "./pages/Login";
+// import PinterestLogin from "./pages/Login";
 import { Auth0Provider } from '@auth0/auth0-react';
-import ProtectecRouted from "./components/ProtectecRouted";
+// import ProtectecRouted from "./components/ProtectecRouted";
 
 
 const App = () => {
@@ -16,26 +16,26 @@ const App = () => {
 
   return (
     <>
-  <Auth0Provider
-    domain="dev-c7jxgd3j6umdceyu.us.auth0.com"
-    clientId="VwkGw7b38gfcJq3tysMedbqaK0FFJ1GL"
+  {/* <Auth0Provider
+    domain="tera domain"
+    clientId="tera id"
     authorizationParams={{
       redirect_uri: window.location.origin
     }}
-  >
+  > */}
       <Routes>
-        <Route path="/" element={<PinterestLogin/>} />
-        <Route element={<ProtectecRouted/>}>
-            <Route path="/home" element={<Home/>} />
+        {/* <Route path="/" element={<PinterestLogin/>} /> */}
+        {/* <Route element={<ProtectecRouted/>}> */}
+            <Route path="/" element={<Home/>} />
             <Route
                 path="/picture/:id"
                 element={<PinterestCard />}
               />
 
               
-      </Route>
+      {/* </Route> */}
       </Routes>
-      </Auth0Provider>
+      {/* </Auth0Provider> */}
       
     </>
   );

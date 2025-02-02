@@ -11,7 +11,7 @@ export default function PinterestLogin() {
     if (!isAuthenticated && !isLoading) {
       loginWithRedirect();
     }
-  }, [isAuthenticated, isLoading, loginWithRedirect]);
+  }, []);
 
   useEffect(() => {
     if (isAuthenticated && !isLoading && location.pathname !== "/home") {
