@@ -6,7 +6,7 @@ export const UserContext = createContext();
 const ApiProvider = ({ children }) => {
   const [photos, setPhotos] = useState([]); 
   const [error, setError] = useState(null); 
-  const api_key = "naya api key";  // Get API key from environment variables
+  const api_key = import.meta.env.VITE_PEXLES_API;  // Get API key from environment variables
   console.log(api_key);
   useEffect(() => {
     const fetchPhotos = async () => {
@@ -21,11 +21,11 @@ const ApiProvider = ({ children }) => {
     };
 
     if (api_key) {
-      fetchPhotos();  // Call the fetch function only if the API key is available
+      fetchPhotos(); 
     } else {
       setError("API key is missing!");
     }
-  }, [api_key]);  // Dependency on api_key, in case it changes
+  }, [api_key]);
 
   return (
     <UserContext.Provider value={{ photos, error }}>
