@@ -6,12 +6,11 @@ export const UserContext = createContext();
 const ApiProvider = ({ children }) => {
   const [photos, setPhotos] = useState([]); 
   const [error, setError] = useState(null); 
-  const api_key = import.meta.env.VITE_PEXLES_API;  // Get API key from environment variables
-  console.log(api_key);
+  const api_key = import.meta.env.VITE_PEXLES_API; 
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
-        const client = createClient(api_key);  // Use the API key correctly
+        const client = createClient(api_key);  
         const response = await client.photos.curated({ per_page: 80 });
         setPhotos(response.photos);  // Update state with fetched photos
       } catch (err) {

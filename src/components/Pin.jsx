@@ -2,7 +2,7 @@ import React from "react";
 
 const Pin = ({ imgSrc, name, link ,id }) => {
   return (
-    <div className="relative group rounded-lg overflow-hidden shadow-md bg-white w-full  ">
+    <div className="relative group rounded-lg overflow-hidden shadow-md bg-white w-full hover:scale-110 ">
      
       <img
         src={imgSrc}
