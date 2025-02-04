@@ -9,10 +9,10 @@ const PinterestCard = () => {
   const { photos, error } = useContext(UserContext); 
   const { id } = useParams(); 
 
-  // Ensure photo is found
+  
   const photo = photos.find((photo) => photo.id.toString() === id);
 
-  // Handle case where photo is not found
+  
   if (!photo) {
     return (
       <div className="w-full h-full">
@@ -30,7 +30,7 @@ const PinterestCard = () => {
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement("a");
       link.href = url;
-      link.setAttribute("download", `pexels-image-${photo.id}.jpg`); // Unique file name based on photo ID
+      link.setAttribute("download", `pexels-image-${photo.id}.jpg`); 
       document.body.appendChild(link);
       link.click();
       link.remove();

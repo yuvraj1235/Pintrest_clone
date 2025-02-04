@@ -12,10 +12,10 @@ const ApiProvider = ({ children }) => {
       try {
         const client = createClient(api_key);  
         const response = await client.photos.curated({ per_page: 80 });
-        setPhotos(response.photos);  // Update state with fetched photos
+        setPhotos(response.photos);  
       } catch (err) {
         console.error("Error fetching photos:", err);
-        setError(err.message);  // Handle error if fetch fails
+        setError(err.message);  
       }
     };
 

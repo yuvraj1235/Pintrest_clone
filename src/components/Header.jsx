@@ -17,11 +17,11 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full bg-black text-white shadow-md px-6 py-4 flex items-center justify-between">
+    <header className="w-full bg-black text-red-500 shadow-md px-6 py-4 flex items-center justify-between">
    
-      <div className="flex items-center hover:scale-90 space-x-2 cursor-pointer"  onClick={handleClick}>
-        <FaPinterest className="text-red-500 text-3xl" />
-        <h1 className="text-2xl  font-bold"  >PinBoard</h1>
+      <div className="flex items-center hover:scale-90 space-x-2  cursor-pointer"  onClick={handleClick}>
+        <FaPinterest className=" text-3xl" />
+        <h1 className="text-2xl font-bold"  >Pintrest_clone</h1>
       </div>
 
    
