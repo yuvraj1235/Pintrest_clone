@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../components/Api";
-import PinCard from "../components/pincard";
+import PinCard from "../components/Pincard";
 import axios from "axios";
 import Header from "../components/Header";
 

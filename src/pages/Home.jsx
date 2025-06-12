@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import PinCard from "../components/pincard";
+import PinCard from "../components/Pincard";
 import { UserContext } from "../components/Api"; 
 import Header from "../components/Header";
 
