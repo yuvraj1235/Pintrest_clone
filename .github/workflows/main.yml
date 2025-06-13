@@ -20,8 +20,18 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
 
-      - name: Sync files to S3
+      - name: Upload HTML files
         run: |
-         aws s3 sync . s3://pintrestclone --delete --exact-timestamps
+          find . -type f -name "*.html" -exec aws s3 cp {} s3://pintrestclone/{} --content-type "text/html" \;
 
+      - name: Upload JS files
+        run: |
+          find . -type f -name "*.js" -exec aws s3 cp {} s3://pintrestclone/{} --content-type "text/javascript" \;
 
+      - name: Upload CSS files
+        run: |
+          find . -type f -name "*.css" -exec aws s3 cp {} s3://pintrestclone/{} --content-type "text/css" \;
+
+      - name: Upload all other files
+        run: |
+          aws s3 sync . s3://pintrestclone --delete --exclude "*.html" --exclude "*.js" --exclude "*.css"
