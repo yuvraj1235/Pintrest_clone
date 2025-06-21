@@ -1,0 +1,37 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+
+      - name: Upload HTML files
+        run: |
+          find . -type f -name "*.html" -exec aws s3 cp {} s3://pintrestclone/{} --content-type "text/html" \;
+
+      - name: Upload JS files
+        run: |
+          find . -type f -name "*.js" -exec aws s3 cp {} s3://pintrestclone/{} --content-type "text/javascript" \;
+
+      - name: Upload CSS files
+        run: |
+          find . -type f -name "*.css" -exec aws s3 cp {} s3://pintrestclone/{} --content-type "text/css" \;
+
+      - name: Upload all other files
+        run: |
+          aws s3 sync . s3://pintrestclone --delete --exclude "*.html" --exclude "*.js" --exclude "*.css"
